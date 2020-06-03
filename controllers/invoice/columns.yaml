@@ -1,0 +1,16 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    title:
+        label: prestasafe.erp::lang.post.title
+        searchable: true
+
+    # author:
+    #   label: Author
+    #   relation: user
+    #   select: login
+    #   searchable: true
+  

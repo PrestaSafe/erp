@@ -1,0 +1,32 @@
+<?= Form::open() ?>
+
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="popup">×</button>
+        <h4 class="modal-title">Create new currency</h4>
+    </div>
+
+    <div class="modal-body">
+        <?= $currencyWidget->render() ?>
+    </div>
+
+    <div class="modal-footer">
+        <button
+            type="submit"
+            data-request="onCreateCurrency"
+            data-request-data="redirect:0"
+            data-hotkey="ctrl+s, cmd+s"
+            data-popup-load-indicator
+            class="btn btn-primary">
+            Create
+        </button>
+
+        <button
+            type="button"
+            class="btn btn-default"
+            data-dismiss="popup">
+            Cancel
+        </button>
+    </div>
+
+<?= Form::close() ?>

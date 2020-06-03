@@ -1,0 +1,52 @@
+
+
+
+<?php if($this->action == "update"): ?>
+
+<?= $this->relationRender('fields'); ?>
+
+
+
+<div id="calculate_partial" class="scoreboard pull-right">
+    <div data-control="toolbar">
+        <div class="scoreboard-item title-value">
+            <h4><?= e(trans('prestasafe.erp::lang.invoice.items_number')); ?></h4>
+            <p class="text-center" id="items_number"><?= $items_number; ?></p>
+        </div>
+
+        <div class="scoreboard-item title-value">
+            <h4><?= e(trans('prestasafe.erp::lang.invoice.total_ht')); ?></h4>
+            <p>
+                <span id="total_ht"><?= $total_ht; ?></span>
+                <span id="currency"><?= $currency ?></span>
+            </p>
+        </div>
+
+        <div class="scoreboard-item title-value">
+            <h4><?= e(trans('prestasafe.erp::lang.invoice.total_ttc')); ?></h4>
+            <p>
+                <span id="total_ttc"><?= $total_ttc; ?></span>
+                <span id="currency"><?= $currency ?></span>
+            </p>
+        </div>
+        
+        <div class="scoreboard-item title-value">
+            <h4><?= e(trans('prestasafe.erp::lang.invoice.total_discount')); ?></h4>
+            <p>
+                <span id="total_discount"><?= $total_discount; ?></span>
+                <span id="currency"><?= $currency ?></span>
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+
+<?php else: ?>
+<div class="callout fade in callout-info no-subheader">
+    <div class="header">
+        <i class="icon-info"></i>
+        <h3><?= e(trans('prestasafe.erp::lang.invoice.please_save')); ?></h3>
+    </div>
+</div>
+<?php endif; ?>

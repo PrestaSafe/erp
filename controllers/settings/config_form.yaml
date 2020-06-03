@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Setting
+
+# Model Form Field configuration
+form: $/prestasafe/erp/models/setting/fields.yaml
+
+# Model Class name
+modelClass: Prestasafe\Erp\Models\Setting
+
+# Default redirect location
+defaultRedirect: prestasafe/erp/settings
+
+# Create page
+create:
+    title: Create Setting
+    redirect: prestasafe/erp/settings/update/:id
+    redirectClose: prestasafe/erp/settings
+
+# Update page
+update:
+    title: Edit Setting
+    redirect: prestasafe/erp/settings
+    redirectClose: prestasafe/erp/settings
+
+# Preview page
+preview:
+    title: Preview Setting

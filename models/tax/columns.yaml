@@ -1,0 +1,18 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: prestasafe.erp::lang.common.id
+        searchable: true
+    name:
+        label: prestasafe.erp::lang.common.name
+        searchable: true
+    rate: 
+        label: prestasafe.erp::lang.common.rate
+        searchable: true
+    default: 
+        label: prestasafe.erp::lang.common.is_default
+        type: inetis-list-switch
+        icon: true

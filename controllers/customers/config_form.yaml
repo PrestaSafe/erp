@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Customer
+
+# Model Form Field configuration
+form: $/prestasafe/erp/models/customer/fields.yaml
+
+# Model Class name
+modelClass: Prestasafe\Erp\Models\Customer
+
+# Default redirect location
+defaultRedirect: prestasafe/erp/customers
+
+# Create page
+create:
+    title: Create Customer
+    redirect: prestasafe/erp/customers/update/:id
+    redirectClose: prestasafe/erp/customers
+
+# Update page
+update:
+    title: Edit Customer
+    redirect: prestasafe/erp/customers
+    redirectClose: prestasafe/erp/customers
+
+# Preview page
+preview:
+    title: Preview Customer

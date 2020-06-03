@@ -1,0 +1,25 @@
+{
+    "name": "prestasafe/oc-erp-plugin",
+    "description": "Erp Plugin for OctoberCMS",
+    "type": "october-plugin",
+    "require": {
+        "barryvdh/laravel-dompdf": "^0.8.4"
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "php artisan key:generate",
+            "php artisan package:discover"
+        ],
+        "post-update-cmd": [
+            "php artisan october:util set build",
+            "php artisan package:discover"
+        ]
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Guillaume Batier",
+            "email": "contact@prestasafe.com"
+        }
+    ]
+}

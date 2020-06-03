@@ -1,0 +1,35 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+        hidden: true
+    active:
+        label: prestasafe.erp::lang.currency.activate
+        type: switch
+        on: Yes
+        off: No
+        default: true
+        span: storm
+        cssClass: col-md-12
+    name:
+        label: prestasafe.erp::lang.currency.name
+        span: storm
+        placeholder: "Ex: Euro"
+        cssClass: col-md-4
+    sign:
+        label: prestasafe.erp::lang.currency.sign
+        span: storm
+        placeholder: "Ex: €"
+        cssClass: col-md-4
+    default:
+        label: prestasafe.erp::lang.common.is_default
+        type: switch
+        on: Yes
+        off: No
+        default: false
+        span: storm
+        cssClass: col-md-12

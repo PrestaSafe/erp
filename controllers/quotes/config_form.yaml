@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Quote
+
+# Model Form Field configuration
+form: $/prestasafe/erp/models/quote/fields.yaml
+
+# Model Class name
+modelClass: Prestasafe\Erp\Models\Quote
+
+# Default redirect location
+defaultRedirect: prestasafe/erp/quotes
+
+# Create page
+create:
+    title: Create Quote
+    redirect: prestasafe/erp/quotes/update/:id
+    redirectClose: prestasafe/erp/quotes
+
+# Update page
+update:
+    title: Edit Quote
+    redirect: prestasafe/erp/quotes
+    redirectClose: prestasafe/erp/quotes
+
+# Preview page
+preview:
+    title: Preview Quote

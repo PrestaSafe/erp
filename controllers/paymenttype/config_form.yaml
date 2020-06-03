@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Payment Type
+
+# Model Form Field configuration
+form: $/prestasafe/erp/models/paymenttype/fields.yaml
+
+# Model Class name
+modelClass: Prestasafe\Erp\Models\PaymentType
+
+# Default redirect location
+defaultRedirect: prestasafe/erp/paymenttype
+
+# Create page
+create:
+    title: Create Payment Type
+    redirect: prestasafe/erp/paymenttype/update/:id
+    redirectClose: prestasafe/erp/paymenttype
+
+# Update page
+update:
+    title: Edit Payment Type
+    redirect: prestasafe/erp/paymenttype
+    redirectClose: prestasafe/erp/paymenttype
+
+# Preview page
+preview:
+    title: Preview Payment Type

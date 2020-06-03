@@ -1,0 +1,84 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+        hidden: true
+    
+    infos_company:
+        label: prestasafe.erp::lang.invoice.company_info
+        type: textarea
+        span: storm
+        cssClass: col-md-6
+        required: true
+    
+    id_customer:
+        label: prestasafe.erp::lang.invoice.customer
+        required: true
+        type: recordfinder
+        list: ~/plugins/prestasafe/erp/models/customer/columns.yaml
+        recordsPerPage: 10
+        title: prestasafe.erp::lang.common.find_record
+        prompt: prestasafe.erp::lang.invoice.click_to_find
+        keyFrom: id
+        commentHtml: true
+
+        comment: prestasafe.erp::lang.common.add_customer
+        nameFrom: name
+        descriptionFrom: email
+        useRelation: false
+        modelClass: Prestasafe\Erp\Models\Customer
+        span: storm
+        cssClass: col-md-4    
+
+    id_currency:
+        label: prestasafe.erp::lang.common.currency
+        required: true
+        type: recordfinder
+        list: ~/plugins/prestasafe/erp/models/currency/columns_popup.yaml
+        recordsPerPage: 10
+        title: prestasafe.erp::lang.common.find_record
+        prompt: prestasafe.erp::lang.invoice.click_to_find
+        keyFrom: id
+        commentHtml: true
+        comment: prestasafe.erp::lang.common.add_currency
+        nameFrom: name
+        descriptionFrom: name
+        useRelation: false
+        modelClass: Prestasafe\Erp\Models\Currency
+        span: storm
+        cssClass: col-md-4
+
+
+    date_display: 
+        label: prestasafe.erp::lang.invoice.date
+        required: true
+        type: datepicker
+        mode: date
+        format: d/m/Y
+        span: storm
+        cssClass: col-md-4
+    
+    objet:
+        label: prestasafe.erp::lang.invoice.objet
+        type: text
+        span: storm
+        cssClass: col-md-4
+
+tabs:
+    fields:
+        rows_field:
+            type: partial
+            path: $/prestasafe/erp/models/invoice/_invoice_fields.htm
+            tab: prestasafe.erp::lang.common.rows
+        payment_tab:
+            type: partial
+            path: $/prestasafe/erp/models/invoice/_payment_tab.htm
+            tab: prestasafe.erp::lang.common.payments
+        export_send:
+            type: partial
+            path: $/prestasafe/erp/models/invoice/_export_send.htm
+            tab: prestasafe.erp::lang.common.export_send

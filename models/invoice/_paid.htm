@@ -1,0 +1,30 @@
+
+
+
+<?php 
+if ($record->isPaid()):
+?>
+    <span class="list-badge badge-success">
+    <i class="icon-check"></i>
+</span>
+<?= trans('prestasafe.erp::lang.common.paid'); ?>
+<br>
+
+<?php else: ?>
+<span class="list-badge badge-warning">
+    <i class="icon-exclamation"></i>
+</span>
+<?= trans('prestasafe.erp::lang.common.waiting'); ?> <?= $record->getAmountNeeded(true); ?>
+<br>
+
+<?php endif; ?>
+<!-- <span class="list-badge badge-info">
+    <i class="icon-info"></i>
+</span>
+Draft
+<br>
+<span class="list-badge badge-danger">
+    <i class="icon-times"></i>
+</span>
+Cancelled
+<br> -->

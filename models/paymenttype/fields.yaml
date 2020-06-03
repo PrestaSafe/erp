@@ -1,0 +1,15 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name: 
+        label: prestasafe.erp::lang.common.name
+        type: text
+        span: auto
+    default:
+        label: prestasafe.erp::lang.common.set_as_default
+        type: switch
+        on: Yes
+        off: No
+        default: false

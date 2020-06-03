@@ -1,0 +1,30 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+        hidden: true
+    active:
+        label: prestasafe.erp::lang.common.activate
+        type: switch
+        on: Yes
+        off: No
+        default: true
+    
+    name:
+        label: prestasafe.erp::lang.common.name
+        placeholder: "Ex: TVA 20%"
+    rate: 
+        label: prestasafe.erp::lang.common.rate_in_%
+        type: text
+        placeholder: "ex: 1.2 for 20%"
+    default:
+        label: prestasafe.erp::lang.common.set_as_default
+        type: switch
+        on: Yes
+        off: No
+        default: false
+    

@@ -1,0 +1,30 @@
+<?php if($this->action == "update"): ?>
+<div class="row">
+
+<div class="col-md-4">
+    
+        <div class="form-group span-left">
+            <a type="button" href="<?= Backend::url('prestasafe/erp/quotes/generatePDF',$model->id); ?>"  class="btn btn-primary">
+                <i class="icon-download"></i> 
+                <?= trans('prestasafe.erp::lang.common.download_in_pdf'); ?>
+            </a>
+        </div>
+
+</div>
+<div class="col-md-2"> - <?= trans('prestasafe.erp::lang.common.or'); ?> - </div>
+
+<div class="col-md-6">
+
+        <div class="form-group span-left">
+            <label><?= trans('prestasafe.erp::lang.common.send_by_email'); ?></label>
+            <input type="email" disabled name="email" value="<?= $customer_email ?? ''; ?>" placeholder="<?= trans('prestasafe.erp::lang.common.enter_an_email'); ?>" class="form-control" />
+        </div>
+        <div class="form-group span-left">
+            <button type="button" data-request="onSendInvoice" class="btn btn-primary oc-icon-send"> <?= trans('prestasafe.erp::lang.common.send'); ?></button>
+        </div>
+
+
+</div>
+
+</div>
+<?php endif; ?>

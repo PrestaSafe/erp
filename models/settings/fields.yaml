@@ -1,0 +1,57 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+tabs:
+    fields:
+        compagny_name:
+            label: prestasafe.erp::lang.settings.company_information
+            type: textarea
+            tab: infos
+
+        bottom_invoice_information:
+            type: textarea
+            label: prestasafe.erp::lang.settings.bottom_invoice_information
+            placeholder: "Ex: Tva non applicable art 293b du CGI"
+            tab: infos
+        
+        img_invoice:
+            label: prestasafe.erp::lang.settings.img_invoice
+            type: fileupload
+            tab: infos
+            mode: image
+            imageHeight: 115
+            imageWidth: 230
+            thumbOptions:
+                mode: crop
+                offset:
+                    - 0
+                    - 0
+                quality: 90
+                sharpen: 0
+                interlace: false
+                extension: auto
+        
+        template_invoice:
+            label: prestasafe.erp::lang.settings.layout
+            tab: template
+            type: codeeditor
+            size: huge
+            language: php
+
+        css_invoice:
+            label: prestasafe.erp::lang.settings.css
+            tab: template
+            type: codeeditor
+            size: huge
+            language: css
+
+
+        template_content:
+            label: prestasafe.erp::lang.settings.content
+            tab: template
+            type: codeeditor
+            size: huge
+            language: php
+
+
+

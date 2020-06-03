@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title><?= $title ?> <?= $invoice->id; ?></title>
+		<?= '<style>'.$css.'</style>'; ?>
+		<style>
+		.page-break {
+			page-break-after: always;
+		}
+		</style>
+	</head>
+	<body id="tpl">
+		<?= $content; ?>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    
+    type:
+        label: type
+        relation: type
+        select: name
+        searchable: true
+    
+    date:
+        label: Date
+        type: datetime
+        format: d/m/Y
+        searchable: true
+
+
+    montant: 
+        label: amount
+        type: Number
+        searchable: true
+    

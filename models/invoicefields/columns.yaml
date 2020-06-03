@@ -1,0 +1,49 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+        invisible: true
+    reference: 
+        label: prestasafe.erp::lang.invoice.reference
+        searchable: true
+    description: 
+        label: prestasafe.erp::lang.invoice.description
+        searchable: true
+        width: 15%
+    price_ht:
+        label: prestasafe.erp::lang.invoice.price_ht
+        type: number
+    quantity:
+        label: prestasafe.erp::lang.invoice.quantity
+        type: number
+    
+    tax:
+        label: prestasafe.erp::lang.invoice.taxes
+        relation: tax
+        select: name
+        searchable: true
+
+    price_ttc: 
+        type: text
+        label: prestasafe.erp::lang.invoice.price_ttc
+
+    remise:
+        label: prestasafe.erp::lang.invoice.discount_percent
+        type: number
+
+    total_field_ht_with_discount:
+        label: prestasafe.erp::lang.invoice.total_price_ht
+        type: number
+    
+    total_field_ttc_with_discount:
+        label: prestasafe.erp::lang.invoice.total_price_ttc
+        type: number
+        searchable: true
+    
+    
+
+    

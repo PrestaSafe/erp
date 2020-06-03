@@ -1,0 +1,20 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+    date_display:
+        label: prestasafe.erp::lang.common.between_dates
+        type: daterange
+        format: d/m/Y
+        conditions: date_display >= ':after' AND date_display <= ':before'
+    customer:
+        label: prestasafe.erp::lang.common.by_customer
+        modelClass: Prestasafe\Erp\Models\Customer
+        conditions: id_customer in (:filtered)
+        nameFrom: name
+   
+
+        
+
+    

@@ -1,0 +1,36 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    date:
+        label: Date
+        type: datepicker
+        mode: date
+        format: d/m/Y
+
+    montant: 
+        label: amount
+        type: Number
+        defaultFrom: amount_need
+
+        
+    type_id:
+        label: Payments
+        type: recordfinder
+        list: ~/plugins/prestasafe/erp/models/paymenttype/columns.yaml
+        recordsPerPage: 10
+        title: Find a payment
+        prompt: Click the Find button to find a payment
+        keyFrom: id
+        commentHtml: true
+        comment: <a data-control="popup" data-handler="onLoadPaymentWidget" href="javascript:;" class="btn btn-sm btn-secondary oc-icon-dollar"> Add Payment  </a>
+        nameFrom: name
+        descriptionFrom: name
+        useRelation: false
+        modelClass: Prestasafe\Erp\Models\PaymentType
+
+    # type_id:
+    #     label: Payments
+    #     type: dropdown
+        

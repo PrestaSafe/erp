@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Tax
+
+# Model Form Field configuration
+form: $/prestasafe/erp/models/tax/fields.yaml
+
+# Model Class name
+modelClass: Prestasafe\Erp\Models\Tax
+
+# Default redirect location
+defaultRedirect: prestasafe/erp/taxes
+
+# Create page
+create:
+    title: Create Tax
+    redirect: prestasafe/erp/taxes/update/:id
+    redirectClose: prestasafe/erp/taxes
+
+# Update page
+update:
+    title: Edit Tax
+    redirect: prestasafe/erp/taxes
+    redirectClose: prestasafe/erp/taxes
+
+# Preview page
+preview:
+    title: Preview Tax

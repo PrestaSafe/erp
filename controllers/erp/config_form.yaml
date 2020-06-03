@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Erp
+
+# Model Form Field configuration
+form: $/prestasafe/erp/models/erp/fields.yaml
+
+# Model Class name
+modelClass: Prestasafe\Erp\Models\Erp
+
+# Default redirect location
+defaultRedirect: prestasafe/erp/erp
+
+# Create page
+create:
+    title: Create Erp
+    redirect: prestasafe/erp/erp/update/:id
+    redirectClose: prestasafe/erp/erp
+
+# Update page
+update:
+    title: Edit Erp
+    redirect: prestasafe/erp/erp
+    redirectClose: prestasafe/erp/erp
+
+# Preview page
+preview:
+    title: Preview Erp

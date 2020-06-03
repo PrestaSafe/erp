@@ -1,0 +1,26 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    active:
+        label: prestasafe.erp::lang.customer.activate
+        type: switch
+        on: Yes
+        off: No
+        default: true
+    id:
+        label: ID
+        hidden: true
+        disabled: true
+    name:
+        label: prestasafe.erp::lang.customer.name
+    tel:
+        label: prestasafe.erp::lang.customer.phone
+    fax:
+        label: prestasafe.erp::lang.customer.fax
+    mail:
+        label: prestasafe.erp::lang.customer.email
+    adresse:
+        label: prestasafe.erp::lang.customer.address
+        type: textarea

@@ -1,0 +1,33 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id: 
+        label: ID
+        searchable: true
+    # id_customer:
+    #     label: Customer
+    #     searchable: true
+    customer:
+        label: 'prestasafe.erp::lang.invoice.customer'
+        relation: customers
+        select: name
+        searchable: false
+        sortable: false
+        
+    date_display: 
+        label: 'prestasafe.erp::lang.invoice.creation_date'
+        type: date
+        format: d/m/Y
+        searchable: true
+        
+
+    total_invoice_ttc:
+        label: 'prestasafe.erp::lang.invoice.total_ttc'
+
+    content:
+        label: 'prestasafe.erp::lang.invoice.paid'
+        sortable: false
+        type: partial
+        path: ~/plugins/prestasafe/erp/models/invoice/_paid.htm

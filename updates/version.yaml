@@ -1,0 +1,14 @@
+1.0.0: 
+  - Hello world
+  - create_invoices_table.php
+  - create_invoice_fields_table.php
+  - create_currencies_table.php
+  - create_invoice_paiements_table.php
+  - create_customers_table.php
+  - create_taxes_table.php
+  - create_payment_types_table.php
+  - create_quotes_table.php
+  - create_quote_fields_table.php
+  - create_quote_paiements_table.php
+
+

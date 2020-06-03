@@ -1,0 +1,125 @@
+<header class="clearfix">
+		<div id="logo">
+            <?php if($img): ?>
+                <img src="<?= $img->getLocalPath(); ?>">
+            <?php endif; ?>
+		</div>
+		</div>
+		<h1><?= $title; ?></h1>
+		<div id="company" class="clearfix">
+			<?= str_replace("\n", "<br/>", $invoice->infos_company); ?>
+		</div>
+		<div id="project">
+            <?php 
+            if($invoice->id_customer != 0) {
+            $customer = $invoice->customers; ?>
+			<div><span><?= trans('prestasafe.erp::lang.common.objet'); ?></span> <?= $invoice->objet; ?></div>
+			<div><span><?= trans('prestasafe.erp::lang.common.client'); ?></span> <?= $customer->name; ?></div>
+			<div><span><?= trans('prestasafe.erp::lang.common.address'); ?></span> <?= $customer->adresse; ?></div>
+			<div><span><?= trans('prestasafe.erp::lang.common.email'); ?></span> <a href="mailto:<?= $customer->mail; ?>"><?= $customer->mail; ?></a></div>
+			<div><span><?= trans('prestasafe.erp::lang.common.date'); ?></span> <?= $invoice->date_display; ?></div>
+			<?php } else {?>
+			<div><span><?= trans('prestasafe.erp::lang.common.objet'); ?></span> <?= $invoice->objet; ?></div>
+			<div><?= str_replace("\n", "<br/>", $invoice->infos_client); ?></div>
+			<div><span><?= trans('prestasafe.erp::lang.common.date'); ?></span> <?= $invoice->date_display; ?></div>
+            <?php } ?>
+			
+		</div>
+	</header>
+	<main>
+		<table width="100%">
+			<thead>
+				<tr>
+					<th class="top ref" width="10%"><?= trans('prestasafe.erp::lang.common.reference') ?></th>
+					<th class="top desc" width="20%"><?= trans('prestasafe.erp::lang.common.description') ?></th>
+					<th class="top price_ht" width="8%"><?= trans('prestasafe.erp::lang.common.prix_ht') ?> </th>
+					<th class="top tva" width="10%"><?= trans('prestasafe.erp::lang.common.tva') ?></th>
+					<th class="top qtites"><?= trans('prestasafe.erp::lang.common.qte') ?></th>
+					<th class="top remise"><?= trans('prestasafe.erp::lang.common.rem') ?></th>
+					
+					<th class="top total_ht"><?= trans('prestasafe.erp::lang.common.total_ht') ?> </th>
+					<th class="top total_ttc"><?= trans('prestasafe.erp::lang.common.total_ttc') ?> </th>
+				</tr>
+			</thead>
+		</table>
+		
+        <?php 
+        
+        if(sizeof($fields) > 0){
+		
+		foreach($fields as $f): ?>
+		<div style="page-break-inside:avoid;">
+
+			<div class="cell ref"><?= $f->reference; ?></div>
+			<div class="cell desc" width="20%"><?= str_replace("\n", "<br/>", $f->description); ?></div>	           
+			<div class="cell price_ht"> <?= $f->getPriceHT(); ?> <?= $invoice->currency->sign; ?></div>
+			<div class="cell tva"><?= $f->tax->name; ?></div>
+			<div class="cell qtites"><?= $f->quantity; ?></div>
+			<div class="cell remise"><?= $f->remise; ?></div>
+
+			<div class="cell total_ht"><?= $f->total_field_ht_with_discount; ?> <?= $invoice->currency->sign; ?></div>
+			<div class="cell total_ttc"><?= $f->total_field_ttc_with_discount; ?> <?= $invoice->currency->sign; ?></div>
+
+			
+		</div>
+		
+		
+		<br>
+		<div class="clear sep"> </div>
+		
+		<?php endforeach;
+        } else {
+		
+        }
+        ?>
+		
+		<br><br>
+		<?php if(sizeof($invoice->fields->all()) > 0): ?>
+		<table id="paiement">
+			<thead>
+				<tr>
+					<th><?= trans('prestasafe.erp::lang.common.type'); ?></th>
+					<th><?= trans('prestasafe.erp::lang.common.montant'); ?></th>
+					<th><?= trans('prestasafe.erp::lang.common.date'); ?></th>
+				</tr>
+			</thead>
+			<tbody>
+                
+				<?php foreach($paiements as $p): ?>
+				<tr>
+
+					<td><?= $p->type->name; ?></td>
+					<td><?= $p->montant; ?><?= $invoice->currency->sign; ?></td> 
+					<td><?= $p->date; ?></td>
+				</tr>
+				
+                <?php endforeach; ?>
+				<!-- <tr><td align="center" colspan="3">Aucun paiements</td></tr> -->
+				
+			</tbody>
+        </table>
+    <?php endif; ?>
+		<br><br>
+		<?php ## TOTAL HT  ?>
+		<div class="grand total">
+			<?= trans('prestasafe.erp::lang.common.total_ht'); ?> <span><?= $invoice->getTotalFields(false); ?> <?= $invoice->currency->sign; ?></span>
+		</div>
+		<?php ## TOTAL TTC  ?>
+		<div class="grand total">
+			<?= trans('prestasafe.erp::lang.common.total_ttc'); ?> <span><?= $invoice->getTotalFields(); ?> <?= $invoice->currency->sign; ?></span>
+		</div>
+		<?php ## RESTANT  ?>
+		<div class="grand total">
+			<?= trans('prestasafe.erp::lang.common.restant'); ?>&nbsp;&nbsp;<span><?= $invoice->getAmountNeeded(); ?> <?= $invoice->currency->sign; ?></span>
+		</div>
+		<br><br>      
+		
+	</main>
+	<footer>
+		<?= $bottom; ?>
+		<br>
+			<?=  trans('prestasafe.erp::lang.common.signature'); ?>
+    </footer>
+    <?php if(isset($page_break) && $page_break): ?>
+    <div class="page-break"></div>
+    <?php endif; ?>

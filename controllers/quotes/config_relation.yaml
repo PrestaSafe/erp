@@ -1,0 +1,36 @@
+customers:
+    label: prestasafe.erp::lang.relation.customers
+    view:
+        form: $/prestasafe/erp/models/customer/fields.yaml
+        toolbarButtons: update|delete
+    manage:
+        form: $/prestasafe/erp/models/customer/fields.yaml
+        list: $/prestasafe/erp/models/customer/columns.yaml
+
+fields:
+    label: prestasafe.erp::lang.relation.invoice_fields
+    view:
+        form: $/prestasafe/erp/models/invoicefields/fields.yaml
+        list: $/prestasafe/erp/models/invoicefields/columns.yaml
+        toolbarButtons: create|delete
+        showSearch: true
+        # filter:
+        #     scopes:
+        #         created_at:
+        #             label: Date
+        #             type: daterange
+        #             conditions: created_at >= ':after' AND created_at <= ':before'
+    manage:
+        form: $/prestasafe/erp/models/invoicefields/fields.yaml
+        list: $/prestasafe/erp/models/invoicefields/columns.yaml
+        
+paiements:
+    label: prestasafe.erp::lang.relation.paiements
+    view:
+        form: $/prestasafe/erp/models/invoicepaiements/fields.yaml
+        list: $/prestasafe/erp/models/invoicepaiements/columns.yaml
+        toolbarButtons: create|delete
+        showSearch: true
+    manage:
+        form: $/prestasafe/erp/models/invoicepaiements/fields.yaml
+        list: $/prestasafe/erp/models/invoicepaiements/columns.yaml

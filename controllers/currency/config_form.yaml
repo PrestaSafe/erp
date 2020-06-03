@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Currency
+
+# Model Form Field configuration
+form: $/prestasafe/erp/models/currency/fields.yaml
+
+# Model Class name
+modelClass: Prestasafe\Erp\Models\Currency
+
+# Default redirect location
+defaultRedirect: prestasafe/erp/currency
+
+# Create page
+create:
+    title: Create Currency
+    redirect: prestasafe/erp/currency/update/:id
+    redirectClose: prestasafe/erp/currency
+
+# Update page
+update:
+    title: Edit Currency
+    redirect: prestasafe/erp/currency
+    redirectClose: prestasafe/erp/currency
+
+# Preview page
+preview:
+    title: Preview Currency
