@@ -10,5 +10,6 @@
   - create_quotes_table.php
   - create_quote_fields_table.php
   - create_quote_paiements_table.php
-
+1.0.1:
+  - Fix RainLab.User Issue
 

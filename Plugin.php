@@ -3,7 +3,6 @@
 use Backend;
 use System\Classes\PluginBase;
 use Config;
-use RainLab\User\Models\User;
 /**
 * Erp Plugin Information File
 */
@@ -24,7 +23,7 @@ class Plugin extends PluginBase
     {
         return [
             'name'        => 'Erp',
-            'description' => 'No description provided yet...',
+            'description' => 'Small ERP plugin for Octobercms',
             'author'      => 'Prestasafe',
             'icon'        => 'icon-cloud'
         ];
@@ -90,19 +89,6 @@ class Plugin extends PluginBase
     */
     public function register()
     {
-    }
-    
-    /**
-    * Boot method, called right before the request route.
-    *
-    * @return array
-    */
-    public function boot()
-    {
-        User::extend(function($model) {
-            $model->full_name = $model->name . ' ' .$model->surname;
-        });
-
     }
     
     /**
