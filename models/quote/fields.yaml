@@ -15,7 +15,7 @@ fields:
         cssClass: col-md-6
         required: true
     
-    id_customer:
+    customers:
         label: prestasafe.erp::lang.invoice.customer
         required: true
         type: recordfinder
