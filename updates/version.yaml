@@ -14,3 +14,5 @@
     - 'Fix RainLab.User Issue'
 1.0.2:
     - 'Correction of customers relations'
+1.0.3:
+    - 'fix automatic send document'
