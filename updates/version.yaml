@@ -16,3 +16,5 @@
     - 'Correction of customers relations'
 1.0.3:
     - 'fix automatic send document'
+1.0.4:
+    - 'fix send quote to fix email.'

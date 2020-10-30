@@ -300,14 +300,15 @@ class Quotes extends Controller
     {  
         $data = ['subject' => 'Download your invoice'];
         $id_invoice = (int)Request::segment(6);
+        $quote = Quote::find($id_invoice);
         $this->getInvoiceVars($id_invoice);
         $this->generatePdfLocal($id_invoice);
         
         $pathToFile = plugins_path('prestasafe/erp/pdf/invoice_'.$id_invoice.'.pdf');
         
-        Mail::send('prestasafe.erp::mail.send_invoice', $data, function ($message) use($pathToFile) {
+        Mail::send('prestasafe.erp::mail.send_invoice', $data, function ($message) use($pathToFile,$quote) {
             $message->from('no-reply@website.com', 'Invoice');
-            $message->to('guillaume.batier@gmail.com');
+            $message->to($quote->customers->mail);
             $message->subject('Your invoice');
             $message->attach($pathToFile);
         });
