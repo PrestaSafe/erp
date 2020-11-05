@@ -279,7 +279,7 @@ class Quotes extends Controller
         $invoice = QuoteModel::find($id_invoice);
         $settings = Settings::instance();
         $this->vars['invoice'] = $invoice;
-        $this->vars['title'] = trans('Quote').' #'.$invoice->id;
+        $this->vars['title'] = trans('prestasafe.erp::lang.common.quote').' #'.$invoice->id;
         $this->vars['fields'] = $invoice->fields;
         $this->vars['paiements'] = $invoice->paiements;
         $this->vars['css'] = $settings->css_invoice;

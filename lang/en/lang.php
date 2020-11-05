@@ -92,6 +92,8 @@ return [
         'find_record' =>  'Search record',
         'cancel' => 'Cancel',
         'delete_selected' => 'Delete selected',
+        'invoice' =>  'Invoice',
+        'quote' =>  'Quote',
 
         // navigation
         'invoices' => 'Invoices',

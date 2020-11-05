@@ -18,3 +18,5 @@
     - 'fix automatic send document'
 1.0.4:
     - 'fix send quote to fix email.'
+1.0.5:
+    - 'Improve translation'

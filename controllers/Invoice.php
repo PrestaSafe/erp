@@ -307,7 +307,7 @@ class Invoice extends Controller
         $invoice = InvoiceModel::find($id_invoice);
         $settings = Settings::instance();
         $this->vars['invoice'] = $invoice;
-        $this->vars['title'] = trans('Invoice'). ' #'.$invoice->id;
+        $this->vars['title'] = trans('prestasafe.erp::lang.common.invoice'). ' #'.$invoice->id;
         $this->vars['fields'] = $invoice->fields;
         $this->vars['paiements'] = $invoice->paiements;
         $this->vars['css'] = $settings->css_invoice;
