@@ -15,7 +15,7 @@ fields:
         cssClass: col-md-6
         required: true
     
-    customers:
+    id_customer:
         label: prestasafe.erp::lang.invoice.customer
         required: true
         type: recordfinder
@@ -28,7 +28,7 @@ fields:
         comment: prestasafe.erp::lang.common.add_customer
         nameFrom: name
         descriptionFrom: email
-        useRelation: true
+        useRelation: false
         modelClass: Prestasafe\Erp\Models\Customer
         span: storm
         cssClass: col-md-4

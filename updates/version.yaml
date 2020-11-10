@@ -20,3 +20,5 @@
     - 'fix send quote to fix email.'
 1.0.5:
     - 'Improve translation'
+1.0.6:
+    - 'Fix customer id 0 on save quote'
