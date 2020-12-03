@@ -22,3 +22,5 @@
     - 'Improve translation'
 1.0.6:
     - 'Fix customer id 0 on save quote'
+1.0.7:
+    - 'Improve transaltion on invoice sent'

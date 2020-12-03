@@ -338,7 +338,7 @@ class Invoice extends Controller
     public function onSendInvoice()
     {  
         
-        $data = ['subject' => trans('prestasafe.erp::mail.download_invoice') ];
+        $data = ['subject' => trans('prestasafe.erp::lang.invoice.download_invoice') ];
         $id_invoice = (int)Request::segment(6);
         $invoice = InvoiceModel::find($id_invoice);
         $this->getInvoiceVars($id_invoice);
@@ -352,17 +352,17 @@ class Invoice extends Controller
 
         Mail::send('prestasafe.erp::mail.send_invoice', $data, function ($message) use($pathToFile,$invoice) {
             $message->to($invoice->customers->mail);
-            $message->subject(trans('prestasafe.erp::lang.invoice_subject'));
+            $message->subject(trans('prestasafe.erp::lang.invoice.invoice_subject'));
             $message->attach($pathToFile);
         });
 
         unlink($pathToFile);
         if (Mail::failures()) {
-            Flash::error(trans('prestasafe.erp::lang.invoice_sent_failed'));
+            Flash::error(trans('prestasafe.erp::lang.invoice.invoice_sent_failed'));
             return false;
         }
 
-        Flash::success(trans('prestasafe.erp::lang.invoice_sent_success'));
+        Flash::success(trans('prestasafe.erp::lang.invoice.invoice_sent_success'));
     }
 
     /**

@@ -48,6 +48,10 @@ return [
         'items_number' => 'Nombre de produits',
         'convert' => 'Convertir en facture',
         'click_to_find' => 'Cliquer pour rechercher',
+        'invoice_subject' => 'Votre facture',
+        'invoice_sent_failed' => 'Envoi de la facture echoué',
+        'invoice_sent_success' => 'Facture envoyée avec succès',
+        'download_invoice' => 'Votre facture est attachée à cet e-mail, merci de votre confiance'
         
        
     ],

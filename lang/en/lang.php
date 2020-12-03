@@ -48,6 +48,10 @@ return [
         'items_number' => 'Item(s) number',
         'convert' => 'Convert in Invoice',
         'click_to_find' => 'Click to find',
+        'invoice_subject' => 'Your invoice',
+        'invoice_sent_failed' => 'Invoice sent failed',
+        'invoice_sent_success' => 'Invoice sent successfully',
+        'download_invoice' => 'Your invoice is attach to this email. Thanks to you.'
         
        
     ],
