@@ -13,8 +13,13 @@ columns:
         label: 'prestasafe.erp::lang.invoice.customer'
         relation: customers
         select: name
-        searchable: false
-        sortable: false
+        searchable: true
+        sortable: true
+    
+    objet:
+        label: prestasafe.erp::lang.invoice.objet
+        searchable: true
+        sortable: true
         
     date_display: 
         label: 'prestasafe.erp::lang.invoice.creation_date'
