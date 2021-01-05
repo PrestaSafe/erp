@@ -24,3 +24,5 @@
     - 'Fix customer id 0 on save quote'
 1.0.7:
     - 'Improve transaltion on invoice sent'
+1.0.8:
+    - 'add object columns in quotes and invoice list'
