@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Invoice Payment
+
+# Model Form Field configuration
+form: $/prestasafe/erp/models/invoicepayment/fields.yaml
+
+# Model Class name
+modelClass: Prestasafe\Erp\Models\InvoicePayment
+
+# Default redirect location
+defaultRedirect: prestasafe/erp/invoicepayments
+
+# Create page
+create:
+    title: Create Invoice Payment
+    redirect: prestasafe/erp/invoicepayments/update/:id
+    redirectClose: prestasafe/erp/invoicepayments
+
+# Update page
+update:
+    title: Edit Invoice Payment
+    redirect: prestasafe/erp/invoicepayments
+    redirectClose: prestasafe/erp/invoicepayments
+
+# Preview page
+preview:
+    title: Preview Invoice Payment

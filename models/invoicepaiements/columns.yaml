@@ -10,6 +10,11 @@ columns:
         select: name
         searchable: true
     
+    invoice:
+        label: prestasafe.erp::lang.common.invoice_of
+        relation: invoice
+        select: infos_client
+    
     date:
         label: Date
         type: datetime

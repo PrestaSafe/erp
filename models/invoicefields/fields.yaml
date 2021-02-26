@@ -23,17 +23,17 @@ fields:
     #     useRelation: false
     #     modelClass: Prestasafe\Erp\Models\Tax
 
-    tax_id: 
-        label: Taxes
-        type: dropdown
-        options: getTaxesList
 
     price_ht:
         label: Price Tax Excl.
         type: number
         default: 0
-        dependsOn: 
-            - price_ttc
+
+    tax_id: 
+        label: Taxes
+        type: dropdown
+
+        
     quantity:
         label: Quantity
         type: number
@@ -41,9 +41,12 @@ fields:
 
         
     price_ttc: 
-        type: number
         label: Price tax incl.
+        type: number
         default: 0
+        customTrigger: 
+            onChange:
+                onCustomChangeAjaxMethod
         dependsOn: 
             - price_ht
             - tax_id

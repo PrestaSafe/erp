@@ -186,7 +186,13 @@ class Plugin extends PluginBase
                         'icon'        => 'icon-gear',
                         'url'         => Backend::url('system/settings/update/prestasafe/erp/settings'),
                         'permissions' => ['prestasafe.erp.*']
-                        ]
+                    ],
+                    'invoicepayments' =>[
+                        'label' => trans('prestasafe.erp::lang.common.invoicepayments'),
+                        'icon' => 'icon-eur',
+                        'url' => Backend::url('prestasafe/erp/invoicepayments'),
+                        'permissions' => ['prestasafe.erp.*']
+                    ], 
                         
                         ]
                     ],

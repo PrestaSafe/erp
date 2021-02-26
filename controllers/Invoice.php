@@ -395,14 +395,14 @@ class Invoice extends Controller
             $id_invoice = (int)Request::segment(6);
         }
         $this->vars['content'] = $this->getInvoiceContent($id_invoice);
-        $this->vars['title'] = trans('Invoice').' #'.$id_invoice;
+        $this->vars['title'] = trans('prestasafe.erp::lang.common.invoice').' #'.$id_invoice;
         $view = $this->makePartial('$/prestasafe/erp/views/_template_invoice.htm');
         if($view_only){
             return $view;
         }
         $pdf = $this->pdf->loadHTML($view);
-
-        return $pdf->stream('invoice.pdf');
+        $doc_name = trans('prestasafe.erp::lang.common.invoice').'-'.$id_invoice.'.pdf';
+        return $pdf->download($doc_name);
     }
     /**
      * Generate PDF multiple
@@ -433,7 +433,8 @@ class Invoice extends Controller
         // return $view;
         // die();
         $pdf = $this->pdf->loadHTML($view);
-        return $pdf->stream('invoice.pdf');
+        $doc_name = trans('prestasafe.erp::lang.common.invoices').'.pdf';
+        return $pdf->stream($doc_name);
     }
 
     public function seeInvoice()

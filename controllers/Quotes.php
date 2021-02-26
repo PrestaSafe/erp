@@ -315,11 +315,11 @@ class Quotes extends Controller
 
         unlink($pathToFile);
         if (Mail::failures()) {
-            Flash::error('Impossible to sent invoice.');
+            Flash::error(trans('prestasafe.erp::lang.action.invoice_sent_impossible'));
             return false;
         }
 
-        Flash::success('Invoice sent !');
+        Flash::success(trans('prestasafe.erp::lang.action.invoice_sent'));
     }
 
     public function generatePdfLocal($id_invoice)
@@ -344,8 +344,8 @@ class Quotes extends Controller
             return $view;
         }
         $pdf = $this->pdf->loadHTML($view);
-
-        return $pdf->stream('invoice.pdf');
+        $doc_name = trans('prestasafe.erp::lang.common.quote').'-'.$id_invoice.'.pdf';
+        return $pdf->download($doc_name);
     }
     /**
      * Generate PDF multiple
@@ -376,7 +376,8 @@ class Quotes extends Controller
         // return $view;
         // die();
         $pdf = $this->pdf->loadHTML($view);
-        return $pdf->stream('quotes.pdf');
+        $doc_name = trans('prestasafe.erp::lang.common.quotes').'.pdf';
+        return $pdf->stream($doc_name);
     }
 
     public function seeInvoice()

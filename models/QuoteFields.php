@@ -1,6 +1,7 @@
 <?php namespace Prestasafe\Erp\Models;
 
 use Model;
+use Prestasafe\Erp\Classes\Calculator;
 
 /**
  * QuoteFields Model
@@ -71,14 +72,12 @@ class QuoteFields extends Model
             Quote::class
         ]
     ];
-
-
-      /**
+    /**
      * get Tax list
      *
      * @return void
      */
-    public function getTaxesList()
+    public function getTaxIdOptions()
     {
         return Tax::pluck('name','id')->all();
     }
@@ -92,7 +91,6 @@ class QuoteFields extends Model
     {
         return $this->exists ? $this->attributes['tax_id'] : Tax::getDefaultTaxId();
     }
-
     /**
      * Refresh field with ajax
      *
@@ -102,36 +100,41 @@ class QuoteFields extends Model
      */
     public function filterFields($fields, $context = null)
     {
-        $tax_id = $fields->tax_id->value;
-        if($context == 'create')
+        $values = post('QuoteFields');
+        $tax_id = (int)$values['tax_id'];
+        $price_ht = (float)$values['price_ht'];
+        if($tax_id == 0)
         {
-            if($tax_id)
-            {
-                $tax_rate = Tax::find($tax_id)->ratio;
-                $p_ht = $this->getPriceHT($tax_rate);
-                $p_ttc = $this->getPriceTTC($tax_rate);
-                
-                $fields->price_ttc->value = $p_ttc;
-                $fields->price_ht->value = $p_ht;
-            }
-        }else{
-                $p_ht = $this->getPriceHT();
-                $p_ttc = $this->getPriceTTC();
-                $fields->price_ttc->value = $p_ttc;
-                $fields->price_ht->value = $p_ht;
+            $tax_id = (int)$this->getTaxIdAttribute();
         }
+
+        if($context == 'update')
+        {
+            $field_id = (int)post('manage_id');
+            $field = QuoteFields::find($field_id);
+            $tax_id = $field->tax->id;
+        }
+        $calculator = new Calculator((float)$price_ht, Tax::find($tax_id));
+        if($values){
+            $fields->price_ttc->value = $calculator->getPriceTTC();
+        }
+        
+
+    }
+
+    public function getPriceTtcAttribute()
+    {
+        return $this->exists ? $this->attributes['price_ttc'] : 0.00;
+            // return round($this->price_ttc / $this->tax->ratio,2);
+
     }
     
 
     public function getPriceHT($tax_rate = null)
     {
-        if($this->tax)
-        {
-            return round($this->price_ttc / $this->tax->ratio,2);
-        }else if ($tax_rate !== null){
-            return round($this->price_ttc / $tax_rate,2);
-
-        }
+        $tax = Tax::find($this->tax->id);
+        return round($this->price_ttc / $tax->ratio,2);
+       
     }
 
     public function getPriceTTC($tax_rate = null)
@@ -201,4 +204,15 @@ class QuoteFields extends Model
         return (float)round($this->getTotalPriceHtAttribute(false) - $this->getTotalPriceHtAttribute(true),2);
 
     }
+
+
+
+
+
+    public $belongsToMany = [];
+    public $morphTo = [];
+    public $morphOne = [];
+    public $morphMany = [];
+    public $attachOne = [];
+    public $attachMany = [];
 }

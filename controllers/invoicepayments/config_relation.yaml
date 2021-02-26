@@ -1,0 +1,12 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+invoice:
+    label: prestasafe.erp::lang.common.payments
+    view:
+        list: $/prestasafe/erp/models/invoicepaiements/columns.yaml
+        # toolbarButtons: create|delete
+    manage:
+        form: $/prestasafe/erp/models/invoicepaiements/fields.yaml
+        recordsPerPage: 10

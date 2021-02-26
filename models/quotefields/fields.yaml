@@ -8,26 +8,32 @@ fields:
         type: textarea
     reference: 
         label: Reference
-    tax_id:
-        label: Taxes
-        type: recordfinder
-        list: ~/plugins/prestasafe/erp/models/tax/columns.yaml
-        recordsPerPage: 10
-        title: Find a tax
-        prompt: Click the Find button to find a tax
-        keyFrom: id
-        commentHtml: true
-        comment: <a data-control="popup" data-handler="onLoadTaxWidget" href="javascript:;" class="btn btn-sm btn-secondary oc-icon-dollar"> Add taxe  </a>
-        nameFrom: name
-        descriptionFrom: name
-        useRelation: false
-        modelClass: Prestasafe\Erp\Models\Tax
+    # tax_id:
+    #     label: Taxes
+    #     type: recordfinder
+    #     list: ~/plugins/prestasafe/erp/models/tax/columns.yaml
+    #     recordsPerPage: 10
+    #     title: Find a tax
+    #     prompt: Click the Find button to find a tax
+    #     keyFrom: id
+    #     commentHtml: true
+    #     comment: <a data-control="popup" data-handler="onLoadTaxWidget" href="javascript:;" class="btn btn-sm btn-secondary oc-icon-dollar"> Add taxe  </a>
+    #     nameFrom: name
+    #     descriptionFrom: name
+    #     useRelation: false
+    #     modelClass: Prestasafe\Erp\Models\Tax
+
+
     price_ht:
         label: Price Tax Excl.
         type: number
         default: 0
-        dependsOn: 
-            - price_ttc
+
+    tax_id: 
+        label: Taxes
+        type: dropdown
+
+        
     quantity:
         label: Quantity
         type: number
@@ -35,9 +41,12 @@ fields:
 
         
     price_ttc: 
-        type: number
         label: Price tax incl.
+        type: number
         default: 0
+        customTrigger: 
+            onChange:
+                onCustomChangeAjaxMethod
         dependsOn: 
             - price_ht
             - tax_id

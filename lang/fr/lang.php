@@ -41,7 +41,7 @@ return [
         'price_ttc' => 'Prix TTC',
         'price_ht' => 'Prix HT',
         'discount_percent' => 'Remise %',
-        'total_price_ht' => 'Total TTC.',
+        'total_price_ht' => 'Total HT.',
         'total_ht' => 'Total HT.',
         'total_discount' => 'Total Remise',
         'total_price_ttc' => 'Total TTC.',
@@ -121,6 +121,9 @@ return [
         'id' => 'ID',
         'is_default' => 'Par défaut',
         'rate' =>  'Taux en %',
+        'enter_an_email' => 'Entrer un email',
+        'invoice_of' => 'Information facture',
+        'invoicepayments' => 'Paiements',
 
     ],
 
@@ -143,5 +146,9 @@ return [
     ],
     'quotes' => [
         'new_quote' => 'Nouveau devis'
+    ],
+    'actions' => [
+        'invoice_sent_impossible' => 'Il est impossible d\'envoyer le doucment',
+        'invoice_sent' =>  'Document envoyé avec succès',
     ]
 ];

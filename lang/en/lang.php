@@ -122,6 +122,9 @@ return [
 
         // to add
         'rate' =>  'Rate in %',
+        'enter_an_email' => 'Enter an email',
+        'invoice_of' => 'Invoice information',
+        'invoicepayments' => 'Invoice payments',
 
     ],
 
@@ -144,5 +147,10 @@ return [
     ],
     'quotes' => [
         'new_quote' => 'New quote'
+    ],
+    'actions' => [
+        'invoice_sent_impossible' => 'Impossible to send invoice',
+        'invoice_sent' =>  'Invoice sent successfully',
+
     ]
 ];
