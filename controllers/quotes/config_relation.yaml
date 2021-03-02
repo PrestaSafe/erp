@@ -27,10 +27,10 @@ fields:
 paiements:
     label: prestasafe.erp::lang.relation.paiements
     view:
-        form: $/prestasafe/erp/models/invoicepaiements/fields.yaml
-        list: $/prestasafe/erp/models/invoicepaiements/columns.yaml
+        form: $/prestasafe/erp/models/quotepaiements/fields.yaml
+        list: $/prestasafe/erp/models/quotepaiements/columns.yaml
         toolbarButtons: create|delete
         showSearch: true
     manage:
-        form: $/prestasafe/erp/models/invoicepaiements/fields.yaml
-        list: $/prestasafe/erp/models/invoicepaiements/columns.yaml
+        form: $/prestasafe/erp/models/quotepaiements/fields.yaml
+        list: $/prestasafe/erp/models/quotepaiements/columns.yaml

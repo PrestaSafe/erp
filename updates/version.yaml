@@ -28,3 +28,5 @@
     - 'add object columns in quotes and invoice list'
 1.1.0:
     - 'Improve lang, invoice payments, fixe tax calculation'
+1.1.1:
+    - 'fix quotes paiements'
