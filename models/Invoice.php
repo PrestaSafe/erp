@@ -173,9 +173,24 @@ class Invoice extends Model
         return round($this->fields->sum('total_discount_amount_ttc'),2);
     } 
 
+    /**
+     * return total invoice with taxes
+     *
+     * @return float
+     */
     public function getTotalInvoiceTtcAttribute()
     {
         return $this->getTotalFields().$this->currency->sign;
+    }
+    
+    /**
+     * Return total invoice HT
+     *
+     * @return float
+     */
+    public function getTotalInvoiceHtAttribute()
+    {
+        return $this->getTotalFields(false).$this->currency->sign;
     }
 
     

@@ -30,6 +30,9 @@ columns:
 
     total_invoice_ttc:
         label: 'prestasafe.erp::lang.invoice.total_ttc'
+    
+    total_invoice_ht:
+        label: 'prestasafe.erp::lang.invoice.total_ht'
 
     content:
         label: 'prestasafe.erp::lang.invoice.paid'
